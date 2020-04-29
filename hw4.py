@@ -1,4 +1,4 @@
-capital_letters = {
+slovar = {
   u'А': u'A',
   u'Б': u'B',
   u'В': u'V',
@@ -31,9 +31,7 @@ capital_letters = {
   u'Ь': u'',
   u'Э': u'E',
   u'Ю': u'Yu',
-  u'Я': u'Ya',}
-
-lower_case_letters = {
+  u'Я': u'Ya',
   u'а': u'a',
   u'б': u'b',
   u'в': u'v',
@@ -68,36 +66,6 @@ lower_case_letters = {
   u'ю': u'yu',
   u'я': u'ya',}
 
-# def transliterate(string):
-#
-#   capital_letters = _capital_letters
-#   lower_case_letters = _lower_case_letters
-#
-#   len_str = len(string)
-#
-#   translit_string = u""
-#
-#   for index, char in enumerate(string, 1):
-#     repl = lower_case_letters.get(char)
-#     if repl:
-#       translit_string += repl
-#       continue
-#     repl = capital_letters.get(char)
-#     if repl:
-#       if len_str > index:
-#         if string[index] not in lower_case_letters:
-#           repl = repl.upper()
-#       else:
-#         repl = repl.upper()
-#     else:
-#       repl = char
-#     translit_string += repl
-#
-#   return translit_string
-
-
-
-
 
 print('Сейчас Вам будет предложено ввести текст на русском языке для транслитерации ')
 string = input('введите тест: ')
@@ -107,20 +75,9 @@ translit_string = ""
 
 
 for index, char in enumerate(string):
-        if char in lower_case_letters.keys():
-            char = lower_case_letters[char]
-        elif char in capital_letters.keys():
-            char = capital_letters[char]
-            if len(string) > index+1:
-                if string[index+1] not in lower_case_letters.keys():
-                    char = char.upper()
-            else:
-                char = char.upper()
+        if char in slovar.keys():
+            char = slovar[char]
+
         translit_string += char
 
-    # return translit_string
-
 print(translit_string)
-
-
-
