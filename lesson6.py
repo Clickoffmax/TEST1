@@ -1,5 +1,15 @@
-import mod
+# import mod
 
-mod.test()
+# from mod import test2
 
-mod.test2(20)
+from mod import *
+
+
+# mod.test()
+
+test()
+test2(20)
+
+# mod.useless()
+
+
